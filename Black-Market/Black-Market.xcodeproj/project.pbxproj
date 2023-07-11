@@ -14,6 +14,9 @@
 		AB6102242A5CE14200E2F763 /* Black_MarketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6102232A5CE14200E2F763 /* Black_MarketTests.swift */; };
 		AB61022E2A5CE14200E2F763 /* Black_MarketUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB61022D2A5CE14200E2F763 /* Black_MarketUITests.swift */; };
 		AB6102302A5CE14200E2F763 /* Black_MarketUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB61022F2A5CE14200E2F763 /* Black_MarketUITestsLaunchTests.swift */; };
+		AB61023F2A5CE3C700E2F763 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB61023E2A5CE3C700E2F763 /* SignUpViewModel.swift */; };
+		AB6102412A5CE3DD00E2F763 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6102402A5CE3DD00E2F763 /* SignUpView.swift */; };
+		AB6102442A5CE5E300E2F763 /* MarketButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6102432A5CE5E300E2F763 /* MarketButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 		AB6102292A5CE14200E2F763 /* Black-MarketUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Black-MarketUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB61022D2A5CE14200E2F763 /* Black_MarketUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Black_MarketUITests.swift; sourceTree = "<group>"; };
 		AB61022F2A5CE14200E2F763 /* Black_MarketUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Black_MarketUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		AB61023E2A5CE3C700E2F763 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		AB6102402A5CE3DD00E2F763 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		AB6102432A5CE5E300E2F763 /* MarketButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +100,8 @@
 		AB6102112A5CE14100E2F763 /* Black-Market */ = {
 			isa = PBXGroup;
 			children = (
+				AB6102422A5CE58200E2F763 /* Components */,
+				AB61023C2A5CE31C00E2F763 /* Scenes */,
 				AB6102122A5CE14100E2F763 /* Black_MarketApp.swift */,
 				AB6102142A5CE14100E2F763 /* ContentView.swift */,
 				AB6102162A5CE14200E2F763 /* Assets.xcassets */,
@@ -125,6 +133,31 @@
 				AB61022F2A5CE14200E2F763 /* Black_MarketUITestsLaunchTests.swift */,
 			);
 			path = "Black-MarketUITests";
+			sourceTree = "<group>";
+		};
+		AB61023C2A5CE31C00E2F763 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				AB61023D2A5CE32600E2F763 /* SignUp */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		AB61023D2A5CE32600E2F763 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				AB61023E2A5CE3C700E2F763 /* SignUpViewModel.swift */,
+				AB6102402A5CE3DD00E2F763 /* SignUpView.swift */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		AB6102422A5CE58200E2F763 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				AB6102432A5CE5E300E2F763 /* MarketButton.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +290,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB6102412A5CE3DD00E2F763 /* SignUpView.swift in Sources */,
 				AB6102152A5CE14100E2F763 /* ContentView.swift in Sources */,
+				AB61023F2A5CE3C700E2F763 /* SignUpViewModel.swift in Sources */,
 				AB6102132A5CE14100E2F763 /* Black_MarketApp.swift in Sources */,
+				AB6102442A5CE5E300E2F763 /* MarketButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
