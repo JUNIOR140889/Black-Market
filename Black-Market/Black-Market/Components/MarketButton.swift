@@ -9,8 +9,8 @@ import SwiftUI
 
 struct MarketButton: View {
     @Binding var style: Style
-    let action: () -> Void
-    let title: String
+    private let action: () -> Void
+    private let title: String
         
     enum Style {
         case filled
@@ -18,7 +18,11 @@ struct MarketButton: View {
         case plain
     }
     
-    init(style: Binding<Style> = .constant(.plain), action: @escaping () -> Void, title: String) {
+    init(
+        style: Binding<Style> = .constant(.plain),
+        action: @escaping () -> Void,
+        title: String
+    ) {
         self._style = style
         self.action = action
         self.title = title
