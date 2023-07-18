@@ -13,12 +13,6 @@ enum InternalLinkRoutes: String {
     case forgotPassword
 }
 
-extension View {
-    func handleTappableLinks() -> some View {
-        modifier(LinkNavigation())
-    }
-}
-
 struct LinkNavigation: ViewModifier {
     func body(content: Content) -> some View {
         content

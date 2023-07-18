@@ -39,19 +39,6 @@ struct MarketButton: View {
     }
 }
 
-extension View {
-    func applyButtonStyle(_ style: MarketButton.Style) -> some View {
-        switch style {
-        case .filled:
-            return AnyView(modifier(FilledButtonStyle()))
-        case .disabled:
-            return AnyView(modifier(DisableButtonStyle()))
-        case .plain:
-            return AnyView(modifier(PlainButtonStyle()))
-        }
-    }
-}
-
 struct FilledButtonStyle: ViewModifier {
     
     func body(content: Content) -> some View {

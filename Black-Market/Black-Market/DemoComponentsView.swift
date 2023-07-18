@@ -35,16 +35,13 @@ struct DemoComponentsView: View {
                 .textFieldStyle(MarketTexfield(style: .constant(.search), title: "Sarch"))
             
             Text(tappableText)
-                 .environment(\.openURL, OpenURLAction { url in
-                       print(url) // do what you like
-                       return .handled  // compiler won't launch Safari
-                })
+                .handleTappableLinks()
         }
         .padding(10)
     }
     
     var tappableText: AttributedString {
-        var text = AttributedString("I am tappable!")
+        var text = AttributedString("Tappable!")
         text.link = URL(string: "https://stackoverflow.com")
         text.foregroundColor = .green
         return text

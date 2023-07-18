@@ -17,6 +17,7 @@
 		AB6102442A5CE5E300E2F763 /* MarketButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6102432A5CE5E300E2F763 /* MarketButton.swift */; };
 		AB6102462A5EE4CE00E2F763 /* MarketTexfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6102452A5EE4CE00E2F763 /* MarketTexfield.swift */; };
 		AB61024E2A5F3D2400E2F763 /* LinkNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB61024D2A5F3D2400E2F763 /* LinkNavigation.swift */; };
+		AB82D8E62A6623D4008AD3CA /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB82D8E52A6623D4008AD3CA /* ViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		AB6102432A5CE5E300E2F763 /* MarketButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketButton.swift; sourceTree = "<group>"; };
 		AB6102452A5EE4CE00E2F763 /* MarketTexfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketTexfield.swift; sourceTree = "<group>"; };
 		AB61024D2A5F3D2400E2F763 /* LinkNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkNavigation.swift; sourceTree = "<group>"; };
+		AB82D8E52A6623D4008AD3CA /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 		AB6102112A5CE14100E2F763 /* Black-Market */ = {
 			isa = PBXGroup;
 			children = (
+				AB82D8E42A66237D008AD3CA /* Extensions */,
 				AB6102422A5CE58200E2F763 /* Components */,
 				AB6102122A5CE14100E2F763 /* Black_MarketApp.swift */,
 				AB6102142A5CE14100E2F763 /* DemoComponentsView.swift */,
@@ -142,6 +145,14 @@
 				AB61024D2A5F3D2400E2F763 /* LinkNavigation.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		AB82D8E42A66237D008AD3CA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AB82D8E52A6623D4008AD3CA /* ViewExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,6 +285,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB82D8E62A6623D4008AD3CA /* ViewExtension.swift in Sources */,
 				AB61024E2A5F3D2400E2F763 /* LinkNavigation.swift in Sources */,
 				AB6102152A5CE14100E2F763 /* DemoComponentsView.swift in Sources */,
 				AB6102462A5EE4CE00E2F763 /* MarketTexfield.swift in Sources */,
