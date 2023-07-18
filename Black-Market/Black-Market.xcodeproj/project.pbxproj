@@ -24,6 +24,8 @@
 		AB7962842A6DF73300F9390F /* UIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7962832A6DF73300F9390F /* UIConstants.swift */; };
 		AB7962852A6DF73300F9390F /* UIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7962832A6DF73300F9390F /* UIConstants.swift */; };
 		AB82D8E62A6623D4008AD3CA /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB82D8E52A6623D4008AD3CA /* ViewExtension.swift */; };
+		AB82D8EC2A662945008AD3CA /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB82D8E92A662945008AD3CA /* SignUpView.swift */; };
+		AB82D8ED2A662945008AD3CA /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB82D8EB2A662945008AD3CA /* SignInView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		AB79627F2A6DF45100F9390F /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		AB7962832A6DF73300F9390F /* UIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConstants.swift; sourceTree = "<group>"; };
 		AB82D8E52A6623D4008AD3CA /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+		AB82D8E92A662945008AD3CA /* SignUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		AB82D8EB2A662945008AD3CA /* SignInView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +117,7 @@
 			children = (
 				AB7962822A6DF72400F9390F /* Helpers */,
 				AB82D8E42A66237D008AD3CA /* Extensions */,
+				AB82D8E72A662945008AD3CA /* Scenes */,
 				AB6102422A5CE58200E2F763 /* Components */,
 				AB6102122A5CE14100E2F763 /* Black_MarketApp.swift */,
 				AB6102142A5CE14100E2F763 /* DemoComponentsView.swift */,
@@ -173,6 +178,31 @@
 				AB79627F2A6DF45100F9390F /* ColorExtension.swift */,
 			);
 			path = Extensions;
+               sourceTree = "<group>";
+        };
+		AB82D8E72A662945008AD3CA /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				AB82D8E82A662945008AD3CA /* SignUp */,
+				AB82D8EA2A662945008AD3CA /* SignIn */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		AB82D8E82A662945008AD3CA /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				AB82D8E92A662945008AD3CA /* SignUpView.swift */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		AB82D8EA2A662945008AD3CA /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				AB82D8EB2A662945008AD3CA /* SignInView.swift */,
+			);
+			path = SignIn;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,11 +337,13 @@
 			files = (
 				AB82D8E62A6623D4008AD3CA /* ViewExtension.swift in Sources */,
 				AB61024E2A5F3D2400E2F763 /* LinkNavigation.swift in Sources */,
+				AB82D8ED2A662945008AD3CA /* SignInView.swift in Sources */,
 				AB6102152A5CE14100E2F763 /* DemoComponentsView.swift in Sources */,
 				AB7962802A6DF45100F9390F /* ColorExtension.swift in Sources */,
 				AB79627D2A6DF34800F9390F /* ImageExtension.swift in Sources */,
 				AB6102462A5EE4CE00E2F763 /* MarketTexfield.swift in Sources */,
 				AB6102132A5CE14100E2F763 /* Black_MarketApp.swift in Sources */,
+				AB82D8EC2A662945008AD3CA /* SignUpView.swift in Sources */,
 				AB6102442A5CE5E300E2F763 /* MarketButton.swift in Sources */,
 				AB7962842A6DF73300F9390F /* UIConstants.swift in Sources */,
 			);
