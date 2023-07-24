@@ -19,9 +19,9 @@ struct MarketTexfield: TextFieldStyle {
         var icon: Image? {
             switch self {
             case .password:
-                return Image("visibilityOffIcon")
+                return .visibilityOff
             case .search:
-                return Image("searchIcon")
+                return .search
             default:
                 return nil
             }
@@ -36,11 +36,11 @@ struct MarketTexfield: TextFieldStyle {
         self.title = title
     }
     
-    func _body(configuration: TextField<Self._Label>) -> some View {
+    func _body(configuration: TextField<_Label>) -> some View {
         
         VStack(alignment: .leading) {
             if let title = title {
-                Text(title).font(.custom("Open Sans", size: 14))
+                Text(title).font(.custom("Open Sans", size: UIConstants.MarketTexfield.size))
             }
             HStack {
                 configuration
@@ -51,11 +51,11 @@ struct MarketTexfield: TextFieldStyle {
             }
             .padding()
             .overlay {
-                RoundedRectangle(cornerRadius: 8, style: .continuous)
-                    .stroke(Color(UIColor.systemGray4), lineWidth: 2)
+                RoundedRectangle(cornerRadius: UIConstants.Defaults.cornerRadius, style: .continuous)
+                    .stroke(Color(UIColor.systemGray4), lineWidth: UIConstants.MarketTexfield.lineWidth)
             }
             .background(Color.white)
-            .cornerRadius(8)
+            .cornerRadius(UIConstants.Defaults.cornerRadius)
         }
     }
 }
