@@ -22,7 +22,7 @@ struct SignUpView: View {
     
     var body: some View {
         ZStack() {
-            Image("BackgroundImage")
+            Image("backgroundImage")
                 .resizable()
                 .scaledToFill()
                 .edgesIgnoringSafeArea(.all)
