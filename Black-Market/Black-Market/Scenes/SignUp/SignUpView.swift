@@ -10,6 +10,7 @@ import SwiftUI
 struct SignUpView: View {
     @State var fullName = ""
     @State var email = ""
+    @State var password = ""
     
     var attributedString: AttributedString {
         var string = AttributedString("By signing up, you accept the ")
@@ -35,8 +36,15 @@ struct SignUpView: View {
                 TextField("Type your full name", text: $fullName)
                     .textFieldStyle(MarketTexfield(style: .constant(.default), title: "Full Name"))
                 
-                TextField("Type your password", text: $fullName)
-                    .textFieldStyle(MarketTexfield(style: .constant(.password), title: "Password"))
+                SecureField("Type your password", text: self.$password)
+                    .textFieldStyle(
+                        MarketTexfield(
+                            style: .constant(.password),
+                            title: "Password",
+                            placeholderText: "Type your password",
+                            fieldValue: self.$password
+                        )
+                    )
                 
                 MarketButton(style: .constant(.disabled), action: {
                     print("Button tapped")

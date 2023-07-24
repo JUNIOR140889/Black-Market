@@ -34,86 +34,96 @@ struct SignInView: View {
                     .resizable()
                     .scaledToFill()
                     .edgesIgnoringSafeArea(.all)
-
                 VStack() {
-                    VStack(spacing: 15) {
-                        Image("BlackmarketLogo")
-
-                        TextField("Type your email", text: $email)
-                            .textFieldStyle(MarketTexfield(style: .constant(.default), title: "Email"))
-                            .onChange(of: email) { newValue in
-                                isEmailValid = isValidEmail(newValue)
-                                print("isEmailValid: ", isEmailValid)
-                                style = (isEmailValid && isPasswordValid) ? .filled : .disabled
-                                print("Style-Button: ", style)
-                            }
-
-                        TextField("Type your password", text: $password)
-                            .textFieldStyle(MarketTexfield(style: .constant(.default), title: "Password"))
-                            .onChange(of: password) { newValue in
-                                isPasswordValid = isValidPassword(newValue)
-                                print("isPasswordValid: ", isPasswordValid)
-                                style = (isEmailValid && isPasswordValid) ? .filled : .disabled
-                                print("Style-Button: ", style)
-                            }
-
-                        MarketButton(style: $style, action: {
-                            print("Button tapped")
-                            path.append(.home)
-                        }, title: "Log In")
-                        
-                        Text(tappableText)
-                            .handleTappableLinks()
-                    }
-                    .padding(10)
-                    .frame(width: 328, height: 366)
-                    .background(.white,
-                                in: RoundedRectangle(cornerRadius: 8,
-                                                     style: .continuous))
-
+                    mainCardView
                     Spacer()
                         .frame(height: 20)
+                    signUpCardView
 
-                    VStack(spacing: 15) {
-                        Text("Don’t have an account?").font(.custom("Open Sans", size: 14))
-                        MarketButton(style: .constant(.plain), action: {
-                            print("Button tapped")
-                            path.append(.signUp)
-                        }, title: "Sign Up")
+                }
+                .padding(24)
+                .navigationTitle("")
+                .navigationDestination(for: Dest.self) {
+                    switch $0 {
+                    case .home:
+                        Text("Home Destination Here")
+                    case .signUp:
+                        SignUpView()
                     }
-                    .padding(10)
-                    .frame(width: 328, height: 121)
-                    .background(.white,
-                                in: RoundedRectangle(cornerRadius: 8,
-                                                     style: .continuous))
-
                 }
-            }
-            .navigationTitle("")
-            .navigationDestination(for: Dest.self) {
-                switch $0 {
-                case .home:
-                    Text("Home Destination Here")
-                case .signUp:
-                    SignUpView()
-                }
+                
             }
         }
     }
     
-    func isValidEmail(_ email: String) -> Bool {
-        let regex = try! NSRegularExpression(pattern: "^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,}$", options: [.caseInsensitive])
-        return regex.firstMatch(in: email, options: [], range: NSRange(location: 0, length: email.utf16.count)) != nil
-    }
+    private var mainCardView: some View {
+        VStack(spacing: 15) {
+            Image("BlackmarketLogo")
+            TextField("Type your email", text: $email)
+                .textFieldStyle(MarketTexfield(style: .constant(.default), title: "Email"))
+                .onChange(of: email) { newValue in
+                    isEmailValid = newValue.isValidEmail
+                    style = (isEmailValid && isPasswordValid) ? .filled : .disabled
+                }
 
-    func isValidPassword(_ password: String) -> Bool {
-        let regex = try! NSRegularExpression(pattern: "^(?=.*[A-Z])(?=.*\\d)[A-Za-z\\d@$!%*?&]{8,}$", options: [])
-        return regex.firstMatch(in: password, options: [], range: NSRange(location: 0, length: password.utf16.count)) != nil
+            SecureField("Type your password", text: self.$password)
+                .textFieldStyle(
+                    MarketTexfield(
+                        style: .constant(.password),
+                        title: "Password",
+                        placeholderText: "Type your password",
+                        fieldValue: self.$password
+                    )
+                )
+                .onChange(of: password) { newValue in
+                    isPasswordValid = newValue.isValidPassword
+                    style = (isEmailValid && isPasswordValid) ? .filled : .disabled
+                }
+            
+            MarketButton(style: $style, action: {
+                path.append(.home)
+            }, title: "Log In")
+            
+            Text(tappableText)
+                .handleTappableLinks()
+        }
+        .padding(28)
+        .background(
+            .white,
+            in: RoundedRectangle(cornerRadius: 8, style: .continuous)
+        )
+    }
+    
+    private var signUpCardView: some View {
+        VStack(spacing: 15) {
+            Text("Don’t have an account?").font(.custom("Open Sans", size: 14))
+            MarketButton(style: .constant(.plain), action: {
+                path.append(.signUp)
+            }, title: "Sign Up")
+        }
+        .padding(28)
+        .background(.white,
+                    in: RoundedRectangle(cornerRadius: 8,
+                                         style: .continuous))
     }
 }
 
 struct SignInView_Previews: PreviewProvider {
     static var previews: some View {
         SignInView()
+    }
+}
+
+
+//StringExtension
+extension String {
+    var isValidEmail: Bool {
+        let regex = try! NSRegularExpression(pattern: "^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,}$", options: [.caseInsensitive])
+        return regex.firstMatch(in: self, options: [], range: NSRange(location: 0, length: self.utf16.count)) != nil
+    }
+    
+    var isValidPassword: Bool {
+        let regex = try! NSRegularExpression(pattern: "^(?=.*[A-Z])(?=.*\\d)[A-Za-z\\d@$!%*?&]{8,}$", options: [])
+        return regex.firstMatch(in: self, options: [], range: NSRange(location: 0, length: self.utf16.count)) != nil
     }
 }
