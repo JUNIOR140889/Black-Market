@@ -22,9 +22,9 @@ struct MarketTexfield: TextFieldStyle {
         var icon: Image? {
             switch self {
             case .password:
-                return Image("visibilityOffIcon")
+                return .visibilityOff
             case .search:
-                return Image("searchIcon")
+                return .search
             default:
                 return nil
             }
@@ -68,13 +68,13 @@ struct MarketTexfield: TextFieldStyle {
                 }
             }
         }
-        .frame(height: 20)
+        .frame(height: UIConstants.Defaults.spacerHeight)
         .padding()
         .overlay(alignment: .trailing) {
-            RoundedRectangle(cornerRadius: 8, style: .continuous)
-                .stroke(Color(UIColor.systemGray4), lineWidth: 2)
+            RoundedRectangle(cornerRadius: UIConstants.Defaults.cornerRadius, style: .continuous)
+                .stroke(Color(UIColor.systemGray4), lineWidth: UIConstants.MarketTexfield.lineWidth)
         }
         .background(Color.white)
-        .cornerRadius(8)
+        .cornerRadius(UIConstants.Defaults.cornerRadius)
     }
 }

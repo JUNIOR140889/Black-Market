@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		AB6102132A5CE14100E2F763 /* Black_MarketApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6102122A5CE14100E2F763 /* Black_MarketApp.swift */; };
-		AB6102152A5CE14100E2F763 /* DemoComponentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6102142A5CE14100E2F763 /* DemoComponentsView.swift */; };
 		AB6102172A5CE14200E2F763 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB6102162A5CE14200E2F763 /* Assets.xcassets */; };
 		AB61021A2A5CE14200E2F763 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB6102192A5CE14200E2F763 /* Preview Assets.xcassets */; };
 		AB6102242A5CE14200E2F763 /* Black_MarketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6102232A5CE14200E2F763 /* Black_MarketTests.swift */; };
@@ -26,6 +25,8 @@
 		AB82D8E62A6623D4008AD3CA /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB82D8E52A6623D4008AD3CA /* ViewExtension.swift */; };
 		AB82D8EC2A662945008AD3CA /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB82D8E92A662945008AD3CA /* SignUpView.swift */; };
 		AB82D8ED2A662945008AD3CA /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB82D8EB2A662945008AD3CA /* SignInView.swift */; };
+		AB86076F2A7041D300D1FCAD /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB86076E2A7041D300D1FCAD /* StringExtension.swift */; };
+		AB8607712A70663A00D1FCAD /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = AB8607702A70663A00D1FCAD /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +49,6 @@
 /* Begin PBXFileReference section */
 		AB61020F2A5CE14100E2F763 /* Black-Market.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Black-Market.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB6102122A5CE14100E2F763 /* Black_MarketApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Black_MarketApp.swift; sourceTree = "<group>"; };
-		AB6102142A5CE14100E2F763 /* DemoComponentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoComponentsView.swift; sourceTree = "<group>"; };
 		AB6102162A5CE14200E2F763 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB6102192A5CE14200E2F763 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AB61021F2A5CE14200E2F763 /* Black-MarketTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Black-MarketTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,6 +65,8 @@
 		AB82D8E52A6623D4008AD3CA /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		AB82D8E92A662945008AD3CA /* SignUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		AB82D8EB2A662945008AD3CA /* SignInView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		AB86076E2A7041D300D1FCAD /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		AB8607702A70663A00D1FCAD /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,9 +122,9 @@
 				AB82D8E72A662945008AD3CA /* Scenes */,
 				AB6102422A5CE58200E2F763 /* Components */,
 				AB6102122A5CE14100E2F763 /* Black_MarketApp.swift */,
-				AB6102142A5CE14100E2F763 /* DemoComponentsView.swift */,
 				AB6102162A5CE14200E2F763 /* Assets.xcassets */,
 				AB6102182A5CE14200E2F763 /* Preview Content */,
+				AB8607702A70663A00D1FCAD /* Localizable.xcstrings */,
 			);
 			path = "Black-Market";
 			sourceTree = "<group>";
@@ -176,10 +178,11 @@
 				AB82D8E52A6623D4008AD3CA /* ViewExtension.swift */,
 				AB79627C2A6DF34800F9390F /* ImageExtension.swift */,
 				AB79627F2A6DF45100F9390F /* ColorExtension.swift */,
+				AB86076E2A7041D300D1FCAD /* StringExtension.swift */,
 			);
 			path = Extensions;
-               sourceTree = "<group>";
-        };
+			sourceTree = "<group>";
+		};
 		AB82D8E72A662945008AD3CA /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
@@ -286,11 +289,12 @@
 			};
 			buildConfigurationList = AB61020A2A5CE14000E2F763 /* Build configuration list for PBXProject "Black-Market" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = "es-419";
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				"es-419",
 			);
 			mainGroup = AB6102062A5CE14000E2F763;
 			productRefGroup = AB6102102A5CE14100E2F763 /* Products */;
@@ -311,6 +315,7 @@
 			files = (
 				AB61021A2A5CE14200E2F763 /* Preview Assets.xcassets in Resources */,
 				AB6102172A5CE14200E2F763 /* Assets.xcassets in Resources */,
+				AB8607712A70663A00D1FCAD /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,11 +343,11 @@
 				AB82D8E62A6623D4008AD3CA /* ViewExtension.swift in Sources */,
 				AB61024E2A5F3D2400E2F763 /* LinkNavigation.swift in Sources */,
 				AB82D8ED2A662945008AD3CA /* SignInView.swift in Sources */,
-				AB6102152A5CE14100E2F763 /* DemoComponentsView.swift in Sources */,
 				AB7962802A6DF45100F9390F /* ColorExtension.swift in Sources */,
 				AB79627D2A6DF34800F9390F /* ImageExtension.swift in Sources */,
 				AB6102462A5EE4CE00E2F763 /* MarketTexfield.swift in Sources */,
 				AB6102132A5CE14100E2F763 /* Black_MarketApp.swift in Sources */,
+				AB86076F2A7041D300D1FCAD /* StringExtension.swift in Sources */,
 				AB82D8EC2A662945008AD3CA /* SignUpView.swift in Sources */,
 				AB6102442A5CE5E300E2F763 /* MarketButton.swift in Sources */,
 				AB7962842A6DF73300F9390F /* UIConstants.swift in Sources */,

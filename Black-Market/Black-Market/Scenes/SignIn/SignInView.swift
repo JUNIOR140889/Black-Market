@@ -11,7 +11,6 @@ struct SignInView: View {
     enum Dest: Hashable {
         case home, signUp
     }
-
     @State private var password = ""
     @State private var email = ""
     @State private var path: [Dest] = []
@@ -20,9 +19,9 @@ struct SignInView: View {
     @State private var style: MarketButton.Style = .disabled
     
     private var tappableText: AttributedString {
-        var text = AttributedString("I forgot my password")
+        var text = AttributedString(localized: "I forgot my password", comment: "forgot password button title")
         text.link = URL(string: InternalLinkRoutes.forgotPassword.rawValue)
-        text.foregroundColor = Color("BlueStyle")
+        text.foregroundColor = .blueStyle
         text.font = .custom("Open Sans", size: 16)
         return text
     }
@@ -30,37 +29,40 @@ struct SignInView: View {
     var body: some View {
         NavigationStack(path: $path) {
             ZStack() {
-                Image("backgroundImage")
+                Image.backgroundImage
                     .resizable()
                     .scaledToFill()
                     .edgesIgnoringSafeArea(.all)
                 VStack() {
                     mainCardView
                     Spacer()
-                        .frame(height: 20)
+                        .frame(height: UIConstants.Defaults.spacerHeight)
                     signUpCardView
-
                 }
-                .padding(24)
+                .padding(UIConstants.Defaults.padding)
                 .navigationTitle("")
                 .navigationDestination(for: Dest.self) {
                     switch $0 {
                     case .home:
-                        Text("Home Destination Here")
+                        Text("Home Destination Here", comment: "Home screen title")
                     case .signUp:
                         SignUpView()
                     }
                 }
-                
             }
         }
     }
     
     private var mainCardView: some View {
-        VStack(spacing: 15) {
-            Image("BlackmarketLogo")
+        VStack(spacing: UIConstants.Defaults.spacing) {
+            Image.blackmarketLogo
             TextField("Type your email", text: $email)
-                .textFieldStyle(MarketTexfield(style: .constant(.default), title: "Email"))
+                .textFieldStyle(
+                    MarketTexfield(
+                        style: .constant(.default),
+                        title: String(localized: "Email", comment: "Email title")
+                    )
+                )
                 .onChange(of: email) { newValue in
                     isEmailValid = newValue.isValidEmail
                     style = (isEmailValid && isPasswordValid) ? .filled : .disabled
@@ -70,7 +72,7 @@ struct SignInView: View {
                 .textFieldStyle(
                     MarketTexfield(
                         style: .constant(.password),
-                        title: "Password",
+                        title: String(localized: "Password", comment: "Password title"),
                         placeholderText: "Type your password",
                         fieldValue: self.$password
                     )
@@ -82,28 +84,28 @@ struct SignInView: View {
             
             MarketButton(style: $style, action: {
                 path.append(.home)
-            }, title: "Log In")
+            }, title: String(localized: "Log In", comment: "Log In button title"))
             
             Text(tappableText)
                 .handleTappableLinks()
         }
-        .padding(28)
+        .padding(UIConstants.Defaults.padding)
         .background(
             .white,
-            in: RoundedRectangle(cornerRadius: 8, style: .continuous)
+            in: RoundedRectangle(cornerRadius: UIConstants.Defaults.cornerRadius, style: .continuous)
         )
     }
     
     private var signUpCardView: some View {
-        VStack(spacing: 15) {
+        VStack(spacing: UIConstants.Defaults.spacing) {
             Text("Don’t have an account?").font(.custom("Open Sans", size: 14))
             MarketButton(style: .constant(.plain), action: {
                 path.append(.signUp)
-            }, title: "Sign Up")
+            }, title: String(localized: "Sign Up", comment: "Sign Up button title"))
         }
-        .padding(28)
+        .padding(UIConstants.Defaults.padding)
         .background(.white,
-                    in: RoundedRectangle(cornerRadius: 8,
+                    in: RoundedRectangle(cornerRadius: UIConstants.Defaults.cornerRadius,
                                          style: .continuous))
     }
 }
@@ -111,19 +113,5 @@ struct SignInView: View {
 struct SignInView_Previews: PreviewProvider {
     static var previews: some View {
         SignInView()
-    }
-}
-
-
-//StringExtension
-extension String {
-    var isValidEmail: Bool {
-        let regex = try! NSRegularExpression(pattern: "^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,}$", options: [.caseInsensitive])
-        return regex.firstMatch(in: self, options: [], range: NSRange(location: 0, length: self.utf16.count)) != nil
-    }
-    
-    var isValidPassword: Bool {
-        let regex = try! NSRegularExpression(pattern: "^(?=.*[A-Z])(?=.*\\d)[A-Za-z\\d@$!%*?&]{8,}$", options: [])
-        return regex.firstMatch(in: self, options: [], range: NSRange(location: 0, length: self.utf16.count)) != nil
     }
 }
