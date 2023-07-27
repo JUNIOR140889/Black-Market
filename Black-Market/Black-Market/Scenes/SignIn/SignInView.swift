@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SignInView: View {
-    enum Dest: Hashable {
+    enum Destination: Hashable {
         case home, signUp
     }
     @State private var password = ""
