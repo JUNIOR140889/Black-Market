@@ -62,8 +62,7 @@ struct MarketTexfield: TextFieldStyle {
             }
             
             if style.icon != nil {
-                style.icon
-                .onTapGesture {
+                style.icon.onTapGesture {
                     if style == .password { showPassword.toggle() }
                 }
             }
