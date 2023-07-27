@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MarketTexfield: TextFieldStyle {
+struct MarketTexFieldStyle: TextFieldStyle {
     @Binding var style: Style
     @State var showPassword = false
     private let title: String?
