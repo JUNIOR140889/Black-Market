@@ -27,6 +27,14 @@
 		AB82D8ED2A662945008AD3CA /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB82D8EB2A662945008AD3CA /* SignInView.swift */; };
 		AB86076F2A7041D300D1FCAD /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB86076E2A7041D300D1FCAD /* StringExtension.swift */; };
 		AB8607712A70663A00D1FCAD /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = AB8607702A70663A00D1FCAD /* Localizable.xcstrings */; };
+		AB8607792A72E11300D1FCAD /* DMSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AB8607732A72E11200D1FCAD /* DMSans-Regular.ttf */; };
+		AB86077A2A72E11300D1FCAD /* DMSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AB8607742A72E11200D1FCAD /* DMSans-Bold.ttf */; };
+		AB86077B2A72E11300D1FCAD /* DMSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AB8607752A72E11200D1FCAD /* DMSans-Italic.ttf */; };
+		AB86077C2A72E11300D1FCAD /* DMSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AB8607762A72E11300D1FCAD /* DMSans-BoldItalic.ttf */; };
+		AB86077D2A72E11300D1FCAD /* DMSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AB8607772A72E11300D1FCAD /* DMSans-Medium.ttf */; };
+		AB86077E2A72E11300D1FCAD /* DMSans-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AB8607782A72E11300D1FCAD /* DMSans-MediumItalic.ttf */; };
+		AB8607812A72E14D00D1FCAD /* FontStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8607802A72E14D00D1FCAD /* FontStyle.swift */; };
+		AB8607832A72E6E500D1FCAD /* FontRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8607822A72E6E500D1FCAD /* FontRegister.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +75,14 @@
 		AB82D8EB2A662945008AD3CA /* SignInView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		AB86076E2A7041D300D1FCAD /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		AB8607702A70663A00D1FCAD /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		AB8607732A72E11200D1FCAD /* DMSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-Regular.ttf"; sourceTree = "<group>"; };
+		AB8607742A72E11200D1FCAD /* DMSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-Bold.ttf"; sourceTree = "<group>"; };
+		AB8607752A72E11200D1FCAD /* DMSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-Italic.ttf"; sourceTree = "<group>"; };
+		AB8607762A72E11300D1FCAD /* DMSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		AB8607772A72E11300D1FCAD /* DMSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-Medium.ttf"; sourceTree = "<group>"; };
+		AB8607782A72E11300D1FCAD /* DMSans-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-MediumItalic.ttf"; sourceTree = "<group>"; };
+		AB8607802A72E14D00D1FCAD /* FontStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontStyle.swift; sourceTree = "<group>"; };
+		AB8607822A72E6E500D1FCAD /* FontRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontRegister.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +133,7 @@
 		AB6102112A5CE14100E2F763 /* Black-Market */ = {
 			isa = PBXGroup;
 			children = (
+				AB8607722A72E03200D1FCAD /* Resources */,
 				AB7962822A6DF72400F9390F /* Helpers */,
 				AB82D8E42A66237D008AD3CA /* Extensions */,
 				AB82D8E72A662945008AD3CA /* Scenes */,
@@ -175,6 +192,7 @@
 		AB82D8E42A66237D008AD3CA /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				AB86077F2A72E12D00D1FCAD /* Font */,
 				AB82D8E52A6623D4008AD3CA /* ViewExtension.swift */,
 				AB79627C2A6DF34800F9390F /* ImageExtension.swift */,
 				AB79627F2A6DF45100F9390F /* ColorExtension.swift */,
@@ -206,6 +224,28 @@
 				AB82D8EB2A662945008AD3CA /* SignInView.swift */,
 			);
 			path = SignIn;
+			sourceTree = "<group>";
+		};
+		AB8607722A72E03200D1FCAD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AB8607742A72E11200D1FCAD /* DMSans-Bold.ttf */,
+				AB8607762A72E11300D1FCAD /* DMSans-BoldItalic.ttf */,
+				AB8607752A72E11200D1FCAD /* DMSans-Italic.ttf */,
+				AB8607772A72E11300D1FCAD /* DMSans-Medium.ttf */,
+				AB8607782A72E11300D1FCAD /* DMSans-MediumItalic.ttf */,
+				AB8607732A72E11200D1FCAD /* DMSans-Regular.ttf */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		AB86077F2A72E12D00D1FCAD /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				AB8607802A72E14D00D1FCAD /* FontStyle.swift */,
+				AB8607822A72E6E500D1FCAD /* FontRegister.swift */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -314,8 +354,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB61021A2A5CE14200E2F763 /* Preview Assets.xcassets in Resources */,
+				AB86077D2A72E11300D1FCAD /* DMSans-Medium.ttf in Resources */,
+				AB86077A2A72E11300D1FCAD /* DMSans-Bold.ttf in Resources */,
+				AB86077E2A72E11300D1FCAD /* DMSans-MediumItalic.ttf in Resources */,
+				AB86077C2A72E11300D1FCAD /* DMSans-BoldItalic.ttf in Resources */,
 				AB6102172A5CE14200E2F763 /* Assets.xcassets in Resources */,
 				AB8607712A70663A00D1FCAD /* Localizable.xcstrings in Resources */,
+				AB86077B2A72E11300D1FCAD /* DMSans-Italic.ttf in Resources */,
+				AB8607792A72E11300D1FCAD /* DMSans-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,9 +388,11 @@
 			files = (
 				AB82D8E62A6623D4008AD3CA /* ViewExtension.swift in Sources */,
 				AB61024E2A5F3D2400E2F763 /* LinkNavigation.swift in Sources */,
+				AB8607812A72E14D00D1FCAD /* FontStyle.swift in Sources */,
 				AB82D8ED2A662945008AD3CA /* SignInView.swift in Sources */,
 				AB7962802A6DF45100F9390F /* ColorExtension.swift in Sources */,
 				AB79627D2A6DF34800F9390F /* ImageExtension.swift in Sources */,
+				AB8607832A72E6E500D1FCAD /* FontRegister.swift in Sources */,
 				AB6102462A5EE4CE00E2F763 /* MarketTexfield.swift in Sources */,
 				AB6102132A5CE14100E2F763 /* Black_MarketApp.swift in Sources */,
 				AB86076F2A7041D300D1FCAD /* StringExtension.swift in Sources */,

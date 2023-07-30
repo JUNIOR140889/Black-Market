@@ -44,7 +44,7 @@ struct FilledButtonStyle: ViewModifier {
     func body(content: Content) -> some View {
         content
             .frame(maxWidth: .infinity, maxHeight: UIConstants.Defaults.maxHeight)
-            .background(Color.blackStyle)
+            .background(Color.AppColors.black)
             .foregroundColor(.white)
             .cornerRadius(UIConstants.Defaults.cornerRadius)
     }
@@ -56,9 +56,9 @@ struct PlainButtonStyle: ViewModifier {
         content
             .frame(maxWidth: .infinity, maxHeight: UIConstants.Defaults.maxHeight)
             .background(.clear)
-            .foregroundColor(.blackStyle)
+            .foregroundColor(Color.AppColors.black)
             .overlay(RoundedRectangle(cornerRadius: UIConstants.Defaults.cornerRadius)
-                .stroke(Color.blackStyle, lineWidth: UIConstants.Defaults.lineWidth))
+                .stroke(Color.AppColors.black, lineWidth: UIConstants.Defaults.lineWidth))
     }
 }
 
@@ -67,8 +67,8 @@ struct DisableButtonStyle: ViewModifier {
     func body(content: Content) -> some View {
         content
             .frame(maxWidth: .infinity, maxHeight: UIConstants.Defaults.maxHeight)
-            .background(Color.lightGrey)
-            .foregroundColor(.darkGrayStyle)
+            .background(Color.AppColors.lightGrey)
+            .foregroundColor(Color.AppColors.darkGray)
             .cornerRadius(UIConstants.Defaults.cornerRadius)
     }
 }

@@ -13,7 +13,7 @@ struct SignInView: View {
     }
     @State private var password = ""
     @State private var email = ""
-    @State private var path: [Dest] = []
+    @State private var path: [Destination] = []
     @State private var isEmailValid: Bool = false
     @State private var isPasswordValid: Bool = false
     @State private var style: MarketButton.Style = .disabled
@@ -21,8 +21,8 @@ struct SignInView: View {
     private var tappableText: AttributedString {
         var text = AttributedString(localized: "I forgot my password", comment: "forgot password button title")
         text.link = URL(string: InternalLinkRoutes.forgotPassword.rawValue)
-        text.foregroundColor = .blueStyle
-        text.font = .custom("Open Sans", size: 16)
+        text.foregroundColor = Color.AppColors.blue
+        text.font = .bold(.size16)
         return text
     }
     
@@ -41,7 +41,7 @@ struct SignInView: View {
                 }
                 .padding(UIConstants.Defaults.padding)
                 .navigationTitle("")
-                .navigationDestination(for: Dest.self) {
+                .navigationDestination(for: Destination.self) {
                     switch $0 {
                     case .home:
                         Text("Home Destination Here", comment: "Home screen title")
@@ -58,7 +58,7 @@ struct SignInView: View {
             Image.blackmarketLogo
             TextField("Type your email", text: $email)
                 .textFieldStyle(
-                    MarketTexfield(
+                    MarketTextFieldStyle(
                         style: .constant(.default),
                         title: String(localized: "Email", comment: "Email title")
                     )
@@ -70,7 +70,7 @@ struct SignInView: View {
 
             SecureField("Type your password", text: self.$password)
                 .textFieldStyle(
-                    MarketTexfield(
+                    MarketTextFieldStyle(
                         style: .constant(.password),
                         title: String(localized: "Password", comment: "Password title"),
                         placeholderText: "Type your password",
@@ -98,7 +98,8 @@ struct SignInView: View {
     
     private var signUpCardView: some View {
         VStack(spacing: UIConstants.Defaults.spacing) {
-            Text("Don’t have an account?").font(.custom("Open Sans", size: 14))
+            Text("Don’t have an account?")
+                .font(.regular(.size16))
             MarketButton(style: .constant(.plain), action: {
                 path.append(.signUp)
             }, title: String(localized: "Sign Up", comment: "Sign Up button title"))

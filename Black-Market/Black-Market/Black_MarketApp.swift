@@ -9,6 +9,11 @@ import SwiftUI
 
 @main
 struct Black_MarketApp: App {
+    
+    init() {
+        Font.registerFonts()
+    }
+
     var body: some Scene {
         WindowGroup {
             SignInView()

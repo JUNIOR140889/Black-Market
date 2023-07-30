@@ -33,7 +33,7 @@ struct SignUpView: View {
             
             TextField("Type your email", text: $email)
                 .textFieldStyle(
-                    MarketTexfield(
+                    MarketTextFieldStyle(
                         style: .constant(.default),
                         title: String(localized: "Email", comment: "Email title")
                     )
@@ -41,7 +41,7 @@ struct SignUpView: View {
             
             TextField("Type your full name", text: $fullName)
                 .textFieldStyle(
-                    MarketTexfield(
+                    MarketTextFieldStyle(
                         style: .constant(.default),
                         title: String(localized: "Full Name", comment: "Full Name title")
                     )
@@ -49,7 +49,7 @@ struct SignUpView: View {
             
             SecureField("Type your password", text: self.$password)
                 .textFieldStyle(
-                    MarketTexfield(
+                    MarketTextFieldStyle(
                         style: .constant(.password),
                         title: String(localized: "Password", comment: "Password title"),
                         placeholderText: "Type your password",
@@ -87,8 +87,8 @@ struct SignUpView: View {
     
     func setCustomStyle(_ string: String, link: InternalLinkRoutes) -> AttributedString {
         var attributedString = AttributedString(string)
-        attributedString.foregroundColor = .blueStyle
-        attributedString.font = .custom("Open Sans", size: 16)
+        attributedString.foregroundColor = Color.AppColors.blue
+        attributedString.font = .regular(.size14)
         attributedString.link = URL(string: link.rawValue)
         return attributedString
     }

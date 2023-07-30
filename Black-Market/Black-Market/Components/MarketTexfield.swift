@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MarketTexFieldStyle: TextFieldStyle {
+struct MarketTextFieldStyle: TextFieldStyle {
     @Binding var style: Style
     @State var showPassword = false
     private let title: String?
@@ -47,7 +47,7 @@ struct MarketTexFieldStyle: TextFieldStyle {
         VStack(alignment: .leading) {
             if let title = title {
                 Text(title)
-                    .font(.custom("Open Sans", size: 14))
+                    .font(.regular(.size14))
             }
             textInputView(configuration)
         }
