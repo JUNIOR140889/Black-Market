@@ -15,13 +15,4 @@ struct UIConstants {
         static let padding: CGFloat = 28
         static let spacerHeight: CGFloat = 20
     }
-    
-    enum MarketTexfield {
-        static let size: CGFloat = 14
-        static let lineWidth: CGFloat = 2
-    }
-    
-    enum SignUpView {
-        static let spacing: CGFloat = 20
-    }
 }

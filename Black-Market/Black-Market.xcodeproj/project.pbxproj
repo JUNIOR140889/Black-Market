@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB25419E2A772F0B0079FBEF /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB25419D2A772F0B0079FBEF /* SignInViewModel.swift */; };
+		AB2541A02A7738EC0079FBEF /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB25419F2A7738EC0079FBEF /* SignUpViewModel.swift */; };
 		AB6102132A5CE14100E2F763 /* Black_MarketApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6102122A5CE14100E2F763 /* Black_MarketApp.swift */; };
 		AB6102172A5CE14200E2F763 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB6102162A5CE14200E2F763 /* Assets.xcassets */; };
 		AB61021A2A5CE14200E2F763 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB6102192A5CE14200E2F763 /* Preview Assets.xcassets */; };
@@ -55,6 +57,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AB25419D2A772F0B0079FBEF /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		AB25419F2A7738EC0079FBEF /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		AB61020F2A5CE14100E2F763 /* Black-Market.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Black-Market.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB6102122A5CE14100E2F763 /* Black_MarketApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Black_MarketApp.swift; sourceTree = "<group>"; };
 		AB6102162A5CE14200E2F763 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -214,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				AB82D8E92A662945008AD3CA /* SignUpView.swift */,
+				AB25419F2A7738EC0079FBEF /* SignUpViewModel.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -222,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				AB82D8EB2A662945008AD3CA /* SignInView.swift */,
+				AB25419D2A772F0B0079FBEF /* SignInViewModel.swift */,
 			);
 			path = SignIn;
 			sourceTree = "<group>";
@@ -388,10 +394,12 @@
 			files = (
 				AB82D8E62A6623D4008AD3CA /* ViewExtension.swift in Sources */,
 				AB61024E2A5F3D2400E2F763 /* LinkNavigation.swift in Sources */,
+				AB25419E2A772F0B0079FBEF /* SignInViewModel.swift in Sources */,
 				AB8607812A72E14D00D1FCAD /* FontStyle.swift in Sources */,
 				AB82D8ED2A662945008AD3CA /* SignInView.swift in Sources */,
 				AB7962802A6DF45100F9390F /* ColorExtension.swift in Sources */,
 				AB79627D2A6DF34800F9390F /* ImageExtension.swift in Sources */,
+				AB2541A02A7738EC0079FBEF /* SignUpViewModel.swift in Sources */,
 				AB8607832A72E6E500D1FCAD /* FontRegister.swift in Sources */,
 				AB6102462A5EE4CE00E2F763 /* MarketTexfield.swift in Sources */,
 				AB6102132A5CE14100E2F763 /* Black_MarketApp.swift in Sources */,

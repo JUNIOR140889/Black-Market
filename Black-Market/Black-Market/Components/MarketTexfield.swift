@@ -77,3 +77,10 @@ struct MarketTextFieldStyle: TextFieldStyle {
         .cornerRadius(UIConstants.Defaults.cornerRadius)
     }
 }
+
+private extension UIConstants {
+    enum MarketTexfield {
+        static let size: CGFloat = 14
+        static let lineWidth: CGFloat = 2
+    }
+}

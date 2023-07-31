@@ -11,13 +11,10 @@ struct SignInView: View {
     enum Destination: Hashable {
         case home, signUp
     }
-    @State private var password = ""
-    @State private var email = ""
     @State private var path: [Destination] = []
-    @State private var isEmailValid: Bool = false
-    @State private var isPasswordValid: Bool = false
     @State private var style: MarketButton.Style = .disabled
     
+    @ObservedObject var viewModel: SignInViewModel = SignInViewModel()
     private var tappableText: AttributedString {
         var text = AttributedString(localized: "I forgot my password", comment: "forgot password button title")
         text.link = URL(string: InternalLinkRoutes.forgotPassword.rawValue)
@@ -56,30 +53,28 @@ struct SignInView: View {
     private var mainCardView: some View {
         VStack(spacing: UIConstants.Defaults.spacing) {
             Image.blackmarketLogo
-            TextField("Type your email", text: $email)
+            TextField("Type your email", text: $viewModel.email)
                 .textFieldStyle(
                     MarketTextFieldStyle(
                         style: .constant(.default),
                         title: String(localized: "Email", comment: "Email title")
                     )
                 )
-                .onChange(of: email) { newValue in
-                    isEmailValid = newValue.isValidEmail
-                    style = (isEmailValid && isPasswordValid) ? .filled : .disabled
+                .onChange(of: viewModel.email) { newValue in
+                    style = viewModel.isFormValid ? .filled : .disabled
                 }
 
-            SecureField("Type your password", text: self.$password)
+            SecureField("Type your password", text: self.$viewModel.password)
                 .textFieldStyle(
                     MarketTextFieldStyle(
                         style: .constant(.password),
                         title: String(localized: "Password", comment: "Password title"),
                         placeholderText: "Type your password",
-                        fieldValue: self.$password
+                        fieldValue: self.$viewModel.password
                     )
                 )
-                .onChange(of: password) { newValue in
-                    isPasswordValid = newValue.isValidPassword
-                    style = (isEmailValid && isPasswordValid) ? .filled : .disabled
+                .onChange(of: viewModel.password) { newValue in
+                    style = viewModel.isFormValid ? .filled : .disabled
                 }
             
             MarketButton(style: $style, action: {

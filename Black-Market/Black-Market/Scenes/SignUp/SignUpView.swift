@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct SignUpView: View {
-    @State var fullName = ""
-    @State var email = ""
-    @State var password = ""
+    @ObservedObject var viewModel: SignUpViewModel = SignUpViewModel()
+    @State private var style: MarketButton.Style = .disabled
     
     private var attributedString: AttributedString {
         var string = AttributedString(localized: "By signing up, you accept the", comment: "")
@@ -31,32 +30,41 @@ struct SignUpView: View {
         VStack(spacing: UIConstants.Defaults.spacing) {
             Image.blackmarketLogo
             
-            TextField("Type your email", text: $email)
+            TextField("Type your email", text: $viewModel.email)
                 .textFieldStyle(
                     MarketTextFieldStyle(
                         style: .constant(.default),
                         title: String(localized: "Email", comment: "Email title")
                     )
                 )
+                .onChange(of: viewModel.email) { newValue in
+                    style = viewModel.isFormValid ? .filled : .disabled
+                }
             
-            TextField("Type your full name", text: $fullName)
+            TextField("Type your full name", text: $viewModel.fullName)
                 .textFieldStyle(
                     MarketTextFieldStyle(
                         style: .constant(.default),
                         title: String(localized: "Full Name", comment: "Full Name title")
                     )
                 )
+                .onChange(of: viewModel.fullName) { newValue in
+                    style = viewModel.isFormValid ? .filled : .disabled
+                }
             
-            SecureField("Type your password", text: self.$password)
+            SecureField("Type your password", text: self.$viewModel.password)
                 .textFieldStyle(
                     MarketTextFieldStyle(
                         style: .constant(.password),
                         title: String(localized: "Password", comment: "Password title"),
                         placeholderText: "Type your password",
-                        fieldValue: self.$password
+                        fieldValue: self.$viewModel.password
                     )
                 )
-            MarketButton(style: .constant(.disabled), action: {
+                .onChange(of: viewModel.email) { newValue in
+                    style = viewModel.isFormValid ? .filled : .disabled
+                }
+            MarketButton(style: $style, action: {
                 print("Button tapped")
             }, title: String(localized: "Sign Up", comment: "Sign Up button title"))
             
@@ -97,5 +105,11 @@ struct SignUpView: View {
 struct SignUpView_Previews: PreviewProvider {
     static var previews: some View {
         SignUpView()
+    }
+}
+
+private extension UIConstants {
+    enum SignUpView {
+        static let spacing: CGFloat = 20
     }
 }
