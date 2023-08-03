@@ -49,6 +49,12 @@
         }
       }
     },
+    "Confirm Password" : {
+      "comment" : "Confirm Password title"
+    },
+    "Confirm your password" : {
+
+    },
     "Cookies Policy." : {
       "localizations" : {
         "en" : {
@@ -117,6 +123,7 @@
     },
     "Full Name" : {
       "comment" : "Full Name title",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -234,6 +241,7 @@
       }
     },
     "Type your full name" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {

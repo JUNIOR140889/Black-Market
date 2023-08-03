@@ -40,32 +40,32 @@ struct SignUpView: View {
                 .onChange(of: viewModel.email) { newValue in
                     style = viewModel.isFormValid ? .filled : .disabled
                 }
-            
-            TextField("Type your full name", text: $viewModel.fullName)
-                .textFieldStyle(
-                    MarketTextFieldStyle(
-                        style: .constant(.default),
-                        title: String(localized: "Full Name", comment: "Full Name title")
-                    )
-                )
-                .onChange(of: viewModel.fullName) { newValue in
-                    style = viewModel.isFormValid ? .filled : .disabled
-                }
-            
-            SecureField("Type your password", text: self.$viewModel.password)
+            SecureField("Type your password", text: self.$viewModel.newPassword)
                 .textFieldStyle(
                     MarketTextFieldStyle(
                         style: .constant(.password),
                         title: String(localized: "Password", comment: "Password title"),
                         placeholderText: "Type your password",
-                        fieldValue: self.$viewModel.password
+                        fieldValue: self.$viewModel.newPassword
                     )
                 )
-                .onChange(of: viewModel.email) { newValue in
+                .onChange(of: viewModel.newPassword) { newValue in
+                    style = viewModel.isFormValid ? .filled : .disabled
+                }
+            SecureField("Confirm your password", text: self.$viewModel.confirmPassword)
+                .textFieldStyle(
+                    MarketTextFieldStyle(
+                        style: .constant(.password),
+                        title: String(localized: "Confirm Password", comment: "Confirm Password title"),
+                        placeholderText: "Confirm your password",
+                        fieldValue: self.$viewModel.confirmPassword
+                    )
+                )
+                .onChange(of: viewModel.confirmPassword) { newValue in
                     style = viewModel.isFormValid ? .filled : .disabled
                 }
             MarketButton(style: $style, action: {
-                print("Button tapped")
+                viewModel.signUp()
             }, title: String(localized: "Sign Up", comment: "Sign Up button title"))
             
             Text(attributedString)
