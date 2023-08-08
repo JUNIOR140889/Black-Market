@@ -79,6 +79,7 @@ struct SignInView: View {
             
             MarketButton(style: $style, action: {
                 path.append(.home)
+                viewModel.signIn()
             }, title: String(localized: "Log In", comment: "Log In button title"))
             
             Text(tappableText)

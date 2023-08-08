@@ -12,7 +12,11 @@ enum DateFormat: String {
 }
 
 extension Date {
-    static func date(from stringDate: String, and dateFormat: DateFormat = .defaultDate) -> Date? {
+    static func date(
+        from stringDate: String?,
+        and dateFormat: DateFormat = .defaultDate
+    ) -> Date? {
+        guard let stringDate = stringDate else { return nil }
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = dateFormat.rawValue
         return dateFormatter.date(from: stringDate)

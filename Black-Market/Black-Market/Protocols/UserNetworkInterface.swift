@@ -9,5 +9,5 @@ import Combine
 
 protocol UserNetworkInterface {
     func signUp(params: SignUpRequest) -> AnyPublisher<DefaultResponse, Error>
-    func signIn(params: [String: Any]) -> AnyPublisher<UserDataResponse, Error>
+    func signIn(params: SignInRequest) -> AnyPublisher<UserDataResponse, Error>
 }

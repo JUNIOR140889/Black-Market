@@ -19,7 +19,7 @@ struct SignUpEndpoint: NetworkEndpoint {
     }
     
     var absoluteURLString: String {
-        baseURLString + "dj-rest-auth/registration"
+        baseURLString + "dj-rest-auth/registration/"
     }
     
     var httpMethod: HTTPMethod {

@@ -17,8 +17,9 @@ struct UserModel: Codable {
     let id: Int
     let email: String
     let name: String
-    let profilePicture: URL
-    let birthDate: Date
+    let nickname: String
+    let profilePicture: URL?
+    let birthDate: Date?
     let notificationsEnabled: Bool
     
     init(from decoder: Decoder) throws {
@@ -26,20 +27,14 @@ struct UserModel: Codable {
         self.id = try container.decode(Int.self, forKey: .id)
         self.email = try container.decode(String.self, forKey: .email)
         self.name = try container.decode(String.self, forKey: .name)
+        self.nickname = try container.decode(String.self, forKey: .nickname)
         
         let profilePictureString = try container.decode(String.self, forKey: .profilePicture)
-        if let profilePicture = URL(string: profilePictureString) {
-            self.profilePicture = profilePicture
-        } else {
-            throw DecodingError.dataCorruptedError(forKey: .profilePicture, in: container, debugDescription: "profile picture url error")
-        }
+        self.profilePicture = URL(string: profilePictureString)
         
-        let dateString = try container.decode(String.self, forKey: .birthDate)
-        if let date = Date.date(from: dateString, and: .defaultDate) {
-            self.birthDate = date
-        } else {
-            throw DecodingError.dataCorruptedError(forKey: .birthDate, in: container, debugDescription: "date format mismatch")
-        }
+        let dateString = try? container.decode(String?.self, forKey: .birthDate)
+        self.birthDate = Date.date(from: dateString, and: .defaultDate)
+
         self.notificationsEnabled = try container.decode(Bool.self, forKey: .notificationsEnabled)
     }
 }

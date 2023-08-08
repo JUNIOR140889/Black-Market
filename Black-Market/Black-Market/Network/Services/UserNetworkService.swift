@@ -15,10 +15,8 @@ class UserNetworkService: NetworkService, UserNetworkInterface {
             .eraseToAnyPublisher()
     }
     
-    func signIn(params: [String : Any]) -> AnyPublisher<UserDataResponse, Error> {
-        var decoder = JSONDecoder()
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
-        return getData(from: SignInEndpoint(params: params))
+    func signIn(params: SignInRequest) -> AnyPublisher<UserDataResponse, Error> {
+        getData(from: SignInEndpoint(params: params))
             .decode(as: UserDataResponse.self)
             .eraseToAnyPublisher()
     }
