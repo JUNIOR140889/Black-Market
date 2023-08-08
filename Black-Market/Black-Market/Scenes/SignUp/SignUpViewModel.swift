@@ -44,7 +44,7 @@ class SignUpViewModel: ObservableObject {
                     }
                 }
             }, receiveValue: { [weak self] response in
-                guard let self = self else {
+                guard let self else {
                     return
                 }
                 self.isLoadingData = false
