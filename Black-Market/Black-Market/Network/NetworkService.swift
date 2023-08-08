@@ -21,20 +21,22 @@ class NetworkService {
     }
     
     private func buildRequest(from endpoint: NetworkEndpoint) -> URLRequest? {
-        guard var urlComponents = URLComponents(string: endpoint.absoluteURL) else {
+        guard var urlComponents = URLComponents(string: endpoint.absoluteURLString) else {
             return nil
         }
         if endpoint.httpMethod == .get {
             urlComponents.queryItems = endpoint.params.compactMap({ param -> URLQueryItem in
-                return URLQueryItem(name: param.key, value: param.value as? String ?? "")
+                return URLQueryItem(name: param.key, value: "\(param.value)")
             })
         }
         guard let url = urlComponents.url else {
             return nil
         }
-        var urlRequest = URLRequest(url: url,
-                                    cachePolicy: .reloadIgnoringLocalCacheData,
-                                    timeoutInterval: 30)
+        var urlRequest = URLRequest(
+            url: url,
+            cachePolicy: .reloadIgnoringLocalCacheData,
+            timeoutInterval: 30
+        )
         urlRequest.httpMethod = endpoint.httpMethod.rawValue
         if endpoint.httpMethod == .post {
             urlRequest.httpBody = try? JSONSerialization.data(withJSONObject: endpoint.params, options: [])

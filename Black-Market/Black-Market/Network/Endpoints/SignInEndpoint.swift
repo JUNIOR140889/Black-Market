@@ -14,11 +14,11 @@ struct SignInEndpoint: NetworkEndpoint {
         self.params = params
     }
     
-    var absoluteURL: String {
-        baseURL + "dj-rest-auth/login"
+    var absoluteURLString: String {
+        baseURLString + "dj-rest-auth/login"
     }
     
     var httpMethod: HTTPMethod {
-        HTTPMethod.post
+        .post
     }
 }

@@ -26,11 +26,7 @@ class SignUpViewModel: ObservableObject {
     }
     
     func signUp() {
-        let params = [
-            "email" : email,
-            "password1" : newPassword,
-            "password2" : confirmPassword
-        ]
+        let params = SignUpRequest(email: email, password: newPassword, confirmedPassword: confirmPassword)
         networkService.signUp(params: params)
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { completion in

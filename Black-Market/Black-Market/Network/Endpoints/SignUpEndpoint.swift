@@ -10,15 +10,19 @@ import Foundation
 struct SignUpEndpoint: NetworkEndpoint {
     let params: [String: Any]
     
-    init(params: [String: Any]) {
-        self.params = params
+    init(params: SignUpRequest) {
+        self.params = [
+            "email": params.email,
+            "password1": params.password,
+            "password2": params.confirmedPassword
+        ]
     }
     
-    var absoluteURL: String {
-        baseURL + "dj-rest-auth/registration"
+    var absoluteURLString: String {
+        baseURLString + "dj-rest-auth/registration"
     }
     
     var httpMethod: HTTPMethod {
-        HTTPMethod.post
+        .post
     }
 }

@@ -11,29 +11,35 @@ struct UserDataResponse: Codable {
     let accessToken: String
     let refreshToken: String
     let user: UserModel
-    
-    
-    enum CodingKeys: String, CodingKey {
-        case accessToken = "access_token"
-        case refreshToken = "refresh_token"
-        case user
-    }
 }
 
 struct UserModel: Codable {
     let id: Int
     let email: String
     let name: String
-    let profilePicture: String
-    let birthDate: String
+    let profilePicture: URL
+    let birthDate: Date
     let notificationsEnabled: Bool
     
-    enum CodingKeys: String, CodingKey {
-        case id
-        case email
-        case name
-        case profilePicture = "profile_picture"
-        case birthDate = "birth_date"
-        case notificationsEnabled = "notifications_enabled"
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.id = try container.decode(Int.self, forKey: .id)
+        self.email = try container.decode(String.self, forKey: .email)
+        self.name = try container.decode(String.self, forKey: .name)
+        
+        let profilePictureString = try container.decode(String.self, forKey: .profilePicture)
+        if let profilePicture = URL(string: profilePictureString) {
+            self.profilePicture = profilePicture
+        } else {
+            throw DecodingError.dataCorruptedError(forKey: .profilePicture, in: container, debugDescription: "profile picture url error")
+        }
+        
+        let dateString = try container.decode(String.self, forKey: .birthDate)
+        if let date = Date.date(from: dateString, and: .defaultDate) {
+            self.birthDate = date
+        } else {
+            throw DecodingError.dataCorruptedError(forKey: .birthDate, in: container, debugDescription: "date format mismatch")
+        }
+        self.notificationsEnabled = try container.decode(Bool.self, forKey: .notificationsEnabled)
     }
 }
