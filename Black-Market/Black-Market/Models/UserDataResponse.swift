@@ -12,7 +12,6 @@ struct UserDataResponse: Codable {
     let refreshToken: String
     let user: UserModel
     
-    
     enum CodingKeys: String, CodingKey {
         case accessToken = "access_token"
         case refreshToken = "refresh_token"
