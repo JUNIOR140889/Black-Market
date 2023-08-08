@@ -33,10 +33,10 @@ class SignUpViewModel: ObservableObject {
                 switch completion {
                 case .finished: break
                 case .failure(let error):
+                    self.isLoadingData = false
                     if let error = error as? NetworkError {
                         print(error)
                         self.fetchError = error
-                        self.isLoadingData = false
                     }
                 }
             }, receiveValue: { [weak self] response in

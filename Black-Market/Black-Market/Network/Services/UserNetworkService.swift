@@ -11,7 +11,7 @@ import Combine
 class UserNetworkService: NetworkService, UserNetworkInterface {
     func signUp(params: SignUpRequest) -> AnyPublisher<DefaultResponse, Error> {
         getData(from: SignUpEndpoint(params: params))
-            .decode(type: DefaultResponse.self, decoder: JSONDecoder())
+            .decode(as: DefaultResponse.self)
             .eraseToAnyPublisher()
     }
     
@@ -19,7 +19,7 @@ class UserNetworkService: NetworkService, UserNetworkInterface {
         var decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         return getData(from: SignInEndpoint(params: params))
-            .decode(type: UserDataResponse.self, decoder: decoder)
+            .decode(as: UserDataResponse.self)
             .eraseToAnyPublisher()
     }
 }
