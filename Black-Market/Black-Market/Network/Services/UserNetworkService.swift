@@ -19,7 +19,7 @@ class UserNetworkService: NetworkService, UserNetworkInterface {
         var decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         return getData(from: SignInEndpoint(params: params))
-            .decode(type: UserDataResponse.self, decoder: JSONDecoder())
+            .decode(type: UserDataResponse.self, decoder: decoder)
             .eraseToAnyPublisher()
     }
 }
