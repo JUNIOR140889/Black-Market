@@ -50,6 +50,11 @@
 		AB719AAE2A81DCB70030F52E /* PublisherExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB719AAC2A81DCB70030F52E /* PublisherExtension.swift */; };
 		AB719AB02A81DF3B0030F52E /* SignInRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB719AAF2A81DF3B0030F52E /* SignInRequest.swift */; };
 		AB719AB12A81DF3B0030F52E /* SignInRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB719AAF2A81DF3B0030F52E /* SignInRequest.swift */; };
+		AB719AC42A85D7A10030F52E /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB719ABF2A85D7A10030F52E /* TabBarItem.swift */; };
+		AB719AC52A85D7A10030F52E /* CustomTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB719AC02A85D7A10030F52E /* CustomTabBarView.swift */; };
+		AB719AC62A85D7A10030F52E /* TabBarItemsPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB719AC12A85D7A10030F52E /* TabBarItemsPreferenceKey.swift */; };
+		AB719AC72A85D7A10030F52E /* AppTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB719AC22A85D7A10030F52E /* AppTabBarView.swift */; };
+		AB719AC82A85D7A10030F52E /* CustomTabBarContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB719AC32A85D7A10030F52E /* CustomTabBarContainerView.swift */; };
 		AB79627D2A6DF34800F9390F /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB79627C2A6DF34800F9390F /* ImageExtension.swift */; };
 		AB79627E2A6DF34800F9390F /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB79627C2A6DF34800F9390F /* ImageExtension.swift */; };
 		AB7962802A6DF45100F9390F /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB79627F2A6DF45100F9390F /* ColorExtension.swift */; };
@@ -120,6 +125,11 @@
 		AB719AA92A81DC8D0030F52E /* JSONDecoderExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecoderExtension.swift; sourceTree = "<group>"; };
 		AB719AAC2A81DCB70030F52E /* PublisherExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublisherExtension.swift; sourceTree = "<group>"; };
 		AB719AAF2A81DF3B0030F52E /* SignInRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRequest.swift; sourceTree = "<group>"; };
+		AB719ABF2A85D7A10030F52E /* TabBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
+		AB719AC02A85D7A10030F52E /* CustomTabBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarView.swift; sourceTree = "<group>"; };
+		AB719AC12A85D7A10030F52E /* TabBarItemsPreferenceKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarItemsPreferenceKey.swift; sourceTree = "<group>"; };
+		AB719AC22A85D7A10030F52E /* AppTabBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTabBarView.swift; sourceTree = "<group>"; };
+		AB719AC32A85D7A10030F52E /* CustomTabBarContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarContainerView.swift; sourceTree = "<group>"; };
 		AB79627C2A6DF34800F9390F /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
 		AB79627F2A6DF45100F9390F /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		AB7962832A6DF73300F9390F /* UIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConstants.swift; sourceTree = "<group>"; };
@@ -231,6 +241,7 @@
 		AB6102422A5CE58200E2F763 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				AB719ABE2A85D7A10030F52E /* CustomTabBar */,
 				AB6102432A5CE5E300E2F763 /* MarketButton.swift */,
 				AB6102452A5EE4CE00E2F763 /* MarketTexfield.swift */,
 				AB61024D2A5F3D2400E2F763 /* LinkNavigation.swift */,
@@ -285,6 +296,18 @@
 				AB719AAF2A81DF3B0030F52E /* SignInRequest.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		AB719ABE2A85D7A10030F52E /* CustomTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				AB719ABF2A85D7A10030F52E /* TabBarItem.swift */,
+				AB719AC02A85D7A10030F52E /* CustomTabBarView.swift */,
+				AB719AC12A85D7A10030F52E /* TabBarItemsPreferenceKey.swift */,
+				AB719AC22A85D7A10030F52E /* AppTabBarView.swift */,
+				AB719AC32A85D7A10030F52E /* CustomTabBarContainerView.swift */,
+			);
+			path = CustomTabBar;
 			sourceTree = "<group>";
 		};
 		AB7962822A6DF72400F9390F /* Helpers */ = {
@@ -501,6 +524,8 @@
 				AB719A762A7B344E0030F52E /* NetworkConstants.swift in Sources */,
 				AB719AA72A81CFB10030F52E /* DateExtension.swift in Sources */,
 				AB719A952A7B416A0030F52E /* UserDataResponse.swift in Sources */,
+				AB719AC62A85D7A10030F52E /* TabBarItemsPreferenceKey.swift in Sources */,
+				AB719AC42A85D7A10030F52E /* TabBarItem.swift in Sources */,
 				AB719AB02A81DF3B0030F52E /* SignInRequest.swift in Sources */,
 				AB82D8E62A6623D4008AD3CA /* ViewExtension.swift in Sources */,
 				AB719A7C2A7B35900030F52E /* NetworkService.swift in Sources */,
@@ -510,11 +535,14 @@
 				AB82D8ED2A662945008AD3CA /* SignInView.swift in Sources */,
 				AB719A8F2A7B3FBE0030F52E /* UserNetworkInterface.swift in Sources */,
 				AB719A8C2A7B3F690030F52E /* UserNetworkService.swift in Sources */,
+				AB719AC52A85D7A10030F52E /* CustomTabBarView.swift in Sources */,
 				AB7962802A6DF45100F9390F /* ColorExtension.swift in Sources */,
 				AB719A922A7B40230030F52E /* DefaultResponse.swift in Sources */,
 				AB79627D2A6DF34800F9390F /* ImageExtension.swift in Sources */,
 				AB2541A02A7738EC0079FBEF /* SignUpViewModel.swift in Sources */,
 				AB719AA42A81C26A0030F52E /* SignUpRequest.swift in Sources */,
+				AB719AC72A85D7A10030F52E /* AppTabBarView.swift in Sources */,
+				AB719AC82A85D7A10030F52E /* CustomTabBarContainerView.swift in Sources */,
 				AB719A862A7B3C570030F52E /* SignUpEndpoint.swift in Sources */,
 				AB8607832A72E6E500D1FCAD /* FontRegister.swift in Sources */,
 				AB719A812A7B37300030F52E /* SignInEndpoint.swift in Sources */,

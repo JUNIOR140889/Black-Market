@@ -16,7 +16,7 @@ struct Black_MarketApp: App {
 
     var body: some Scene {
         WindowGroup {
-            SignInView()
+            AppTabBarView()
         }
     }
 }
